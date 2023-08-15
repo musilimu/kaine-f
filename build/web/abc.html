@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://localhost:8080/kaine/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="http://localhost:8080/kaine/">KAINE-FC</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          style="flex-grow: unset"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="http://localhost:8080/kaine/auth/registration.jsp"
+                >sign up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>Welcome to dashboard</h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <form class="form d-grid gap-2">
+            <h2>Register a new player</h2>
+            <div>
+              <label for="name">Player name</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div>
+              <label for="name">Player age</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div>
+              <label for="name">Player ID</label>
+              <input type="text" class="form-control" />
+            </div>
+
+            <button class="btn btn-primary">Register player</button>
+          </form>
+        </div>
+        <section class="col">
+          <h3>List of all Players</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <td><strong>Id</strong></td>
+                <td><strong>Name</strong></td>
+                <td><strong>Age</strong></td>
+                <td><strong>Remove</strong></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>23</td>
+                <td><button class="btn btn-danger">remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
