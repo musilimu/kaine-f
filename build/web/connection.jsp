@@ -5,19 +5,24 @@
 <%@page import="java.util.Properties"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
 
 
 <%
-    String url = "jdbc:postgresql://localhost/kaine";
+    String url = "jdbc:postgresql://localhost/fc_charities";
     Properties props = new Properties();
     props.setProperty("user", "postgres");
     props.setProperty("password", "123456");
-    // props.setProperty("ssl", "true");
-    try {
-        Class.forName("org.postgresql.Driver");
-        Connection conn = DriverManager.getConnection(url, props);
-        application.setAttribute("conn", conn);
-} catch (SQLException e) {
-    e.printStackTrace();
-    }
+
+    DriverManager.registerDriver(new org.postgresql.Driver());
+    Connection con = DriverManager.getConnection(url, props);
+    
+    application.setAttribute("conn", con);
+    PreparedStatement ps = null;    
+    PreparedStatement ps2 = null;    
+    PreparedStatement ps3 = null;
+
+
+    ResultSet rs = null;
+
 %>

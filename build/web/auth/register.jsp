@@ -5,7 +5,7 @@
     String password = request.getParameter("password");
     Connection conn = (Connection) application.getAttribute("conn");
     try {
-        conn.createStatement().executeQuery("INSERT INTO users (username, password) VALUES ('" + username + "', '" + password + "');").close();
+        conn.createStatement().executeQuery("INSERT INTO admin (u_name, u_password) VALUES ('" + username + "', '" + password + "');").close();
 %>
 <script>
     location.href = "${pageContext.request.contextPath}/auth";
