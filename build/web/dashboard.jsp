@@ -8,13 +8,11 @@
 } else {
 %>
 <main class="container mt-4">
-
     <div class="row">
         <%@include file="./partials/newPlayerForm.jsp"%>   
         <%@include file="./partials/playerTable.jsp"%>
-
-
     </div>
+    <%@include file="./partials/charity.jsp"%>
 </main>
 
 <%

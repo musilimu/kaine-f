@@ -4,15 +4,37 @@
 <%@ include file="../connection.jsp" %>
 
 <%    String name = request.getParameter("name");
-    String age = request.getParameter("age");   
-    String nid = request.getParameter("id");
+    String type = request.getParameter("type");   
+    String firstname = request.getParameter("Firstname");    
+    String lastname = request.getParameter("Lastname");    
+    String gender = request.getParameter("Gender");
+
 
     Connection conn = (Connection) application.getAttribute("conn");
     try {
-        conn.createStatement().executeQuery("insert into player (fullname, age, nid) values ('"+name+"', '"+age+"'::date, "+nid+");").close();
+//          conn.createStatement()
+          ps=con.prepareStatement("insert into beneficiaries (f_name, l_name, sex) values(?, ?, ?);");
+                    ps.setString(1, firstname);           
+                    ps.setString(2, lastname);       
+                    ps.setString(3, gender);
+                    ps.execute();
+                    ps2=con.prepareStatement("select * from beneficiaries where f_name = ? and l_name = ?;");
+                    ps2.setString(1, firstname);                     
+                    ps2.setString(2, lastname); 
+                    rs = ps2.executeQuery();
+        if(rs.next()) {
+     String bnid = rs.getString("bn_id");
+                         String adminid = (String)session.getAttribute("adminid").toString();
+                         ps3=con.prepareStatement("insert into charities (type, name, bn_id, admin_id) values(?, ?, ?, "+adminid+");");
+                    ps3.setString(1, type);                    
+                    ps3.setString(2, name);           
+                    ps3.setInt(3, Integer.parseInt(bnid));   
+                    ps3.execute();
+
+    }
 %>
 <script>
-//    location.href = "${pageContext.request.contextPath}/dashboard.jsp";
+    location.href = "${pageContext.request.contextPath}/dashboard.jsp";
 </script>
 <%
     } catch (SQLException e) {
@@ -21,7 +43,8 @@
 
 %>
 <script>
-    location.href = "${pageContext.request.contextPath}/dashboard.jsp";
+    alert(`"<%= e.getMessage()%>"`);
+//    location.href = "${pageContext.request.contextPath}/dashboard.jsp";
 </script>
 <%
     }

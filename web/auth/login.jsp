@@ -5,8 +5,11 @@
     String password = request.getParameter("password");
     Connection conn = (Connection) application.getAttribute("conn");
     try {
-        if (conn.createStatement().executeQuery("select * from users where username = '" + username + "' and password = '" + password + "';").next()) {
-            session.setAttribute("user", username);
+    ResultSet resultSet = conn.createStatement().executeQuery("select * from admin where u_name = '" + username + "' and u_password = '" + password + "';");
+        if (resultSet.next()) {
+            session.setAttribute("user", username);            
+            session.setAttribute("adminid", resultSet.getString("admin_id"));
+
 %>
 <script>
     location.href = "${pageContext.request.contextPath}/dashboard.jsp";
