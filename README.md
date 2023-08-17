@@ -61,6 +61,7 @@ To run the KAINE FC Web Application locally:
 This project is maintained by:
 
 1. [UWITONDANISHEMA Muslim](https://github.com/musllim)
+2. [MIRASIREYURUKUNDO Elyse](https://github.com/mumuryango)
 
 If you'd like to contribute, we welcome you for any kind contibution.
 
