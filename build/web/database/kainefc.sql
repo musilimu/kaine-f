@@ -19,7 +19,7 @@ ALTER TABLE Charities
 ADD CONSTRAINT fk_Charities_1 
 FOREIGN KEY (Admin_id) 
 REFERENCES Admin (Admin_id) 
-ON UPDATE CASCADE ON DELETE RESTRICT;
+ON UPDATE CASCADE ON DELETE CASCADE;
 
 CREATE TABLE Beneficiaries (
 Bn_id serial PRIMARY KEY, 
@@ -31,7 +31,7 @@ ALTER TABLE Charities
 ADD CONSTRAINT fk_Charities_2
 FOREIGN KEY (Bn_id) 
 REFERENCES Beneficiaries (Bn_id) 
-ON UPDATE CASCADE ON DELETE RESTRICT;
+ON UPDATE CASCADE ON DELETE CASCADE;
 
 ALTER TABLE beneficiaries add column ch_id int;
 
@@ -39,6 +39,6 @@ ALTER TABLE beneficiaries
 ADD CONSTRAINT fk_Beneficiaries_1
 FOREIGN KEY (ch_id) 
 REFERENCES Charities (ch_id) 
-ON UPDATE CASCADE ON DELETE RESTRICT;
+ON UPDATE CASCADE ON DELETE CASCADE;
 
 select charities.ch_id, f_name, l_name, name, type, date from charities, beneficiaries where charities.ch_id = beneficiaries.ch_id;
