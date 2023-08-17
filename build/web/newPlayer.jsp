@@ -30,7 +30,21 @@
                     ps3.setString(2, name);           
                     ps3.setInt(3, Integer.parseInt(bnid));   
                     ps3.execute();
+                    ps4=con.prepareStatement("select ch_id from charities where type = ? and name = ? and bn_id = ? and admin_id = "+adminid+";");
+                    ps4.setString(1, type);            
+                    ps4.setString(2, name);          
+                    ps4.setInt(3, Integer.parseInt(bnid));   
+                         
+rs = ps4.executeQuery();
+if(rs.next()) {
+String chid = rs.getString("ch_id");
 
+ps3=con.prepareStatement("update beneficiaries set ch_id = "+chid+" where bn_id = "+bnid+";");
+                         ps3.execute();
+    %>
+    <script>alert(`<%=bnid%>`);</script>
+    <%
+    }
     }
 %>
 <script>

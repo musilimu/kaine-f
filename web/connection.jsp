@@ -1,6 +1,5 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.util.Properties"%>
 <%@page import="java.sql.Statement"%>
@@ -20,7 +19,9 @@
     application.setAttribute("conn", con);
     PreparedStatement ps = null;    
     PreparedStatement ps2 = null;    
-    PreparedStatement ps3 = null;
+    PreparedStatement ps3 = null;   
+    PreparedStatement ps4 = null;
+
 
 
     ResultSet rs = null;
