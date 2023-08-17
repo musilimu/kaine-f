@@ -1,3 +1,4 @@
+<%--<%@ include file="../connection.jsp" %>--%>
 <section class="col mt-5">
     <h3>All charities</h3>
     <table class="table">
@@ -17,7 +18,7 @@
             %>
             <tr>
                 <td><%= resultSet.getString("type")%></td>
-                <td><a href="${pageContext.request.contextPath}/updateCharity.jsp?ch_id=<%=resultSet.getString("ch_id")%>"><%= resultSet.getString("name")%></a></td>
+                <td><%= resultSet.getString("name")%></td>
                 <td><%= resultSet.getString("date")%></td>
                 <td><a href="${pageContext.request.contextPath}/charitiesDelete.jsp?bn_id=<%= resultSet.getString("bn_id")%>" class="btn btn-danger">remove</a></td>
             </tr>

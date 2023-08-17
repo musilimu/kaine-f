@@ -12,6 +12,78 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             rel="stylesheet"
             href="${pageContext.request.contextPath}/css/bootstrap.min.css"
             />
+        <style>
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+
+  .left-section,
+  .right-section,
+  .middle-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .left-section {
+    width: 25%;
+  }
+
+  .right-section {
+    width: 25%;
+    text-align: right;
+  }
+
+  .middle-section {
+    width: 45%;
+  }
+
+  .external-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .external-links a {
+    margin-bottom: 5px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .announcement {
+    font-style: italic;
+    color: #555;
+  }
+
+  .staff-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .staff-list li {
+    margin-bottom: 10px;
+  }
+
+  .staff-list li strong {
+    color: #333;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+  }
+    
+        </style>
     </head>
     <body>
         <!-- Navigation Menu -->
@@ -38,17 +110,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     >
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="home.jsp">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.jsp">Operations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="report.jsp">Report</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Matches</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">News</a>
-                        </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
@@ -70,7 +141,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <a
                                 class="nav-link"
                                 href="${pageContext.request.contextPath}/auth/logout.jsp"
-                                > hello <%= session.getAttribute("user")%> <span class="badge bg-info">logout</span></a
+                                > <strong>Hello</strong> <%= session.getAttribute("user")%> <span class="badge bg-info">logout</span></a
                             >
                             <%
                                     }
@@ -81,5 +152,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div>
             </div>
         </nav>
+                            
+                            
+                            
+                            
     </body>
 </html>
