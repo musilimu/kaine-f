@@ -18,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 width: 100%;
                 object-fit: cover;
             }
-  .menu-icon {
+/*  .menu-icon {
     display: none;
     cursor: pointer;
     font-size: 24px;
@@ -28,7 +28,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
   .left-section,
   .right-section,
   .middle-section {
-    background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -60,7 +59,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
   .announcement {
     font-style: italic;
-    color: #555;
   }
 
   .staff-list {
@@ -72,16 +70,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     margin-bottom: 10px;
   }
 
-  .staff-list li strong {
-    color: #333;
-  }
+
 
   @media only screen and (max-width: 768px) {
     .menu-icon {
       display: block;
     }
 
-  }
+  }*/
     
         </style>
     </head>

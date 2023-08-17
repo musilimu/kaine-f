@@ -1,7 +1,7 @@
 <%@page import="java.sql.ResultSet, java.sql.PreparedStatement"%>
 <%@include file="./partials/header.jsp" %>
 <%@include file="./connection.jsp" %>
-<%@include file="./partials/footer.jsp"%>
+
 <%    if ((sess == null) && (ss == null)) {
 %>
 <script>location.href = "${pageContext.request.contextPath}/auth";</script>
@@ -55,9 +55,8 @@
             </c:if>
         </table>
             </div>
-    </body>
-    
-</html>
+
 <%
     }
 %>
+<%@include file="./partials/footer.jsp"%>

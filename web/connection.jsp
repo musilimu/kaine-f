@@ -9,13 +9,11 @@
 
 
 <%
-       String url = "jdbc:postgresql://dpg-cjehpp6nk9qs73bmg1hg-a.oregon-postgres.render.com/fc_charities";
-    Properties props = new Properties();
-    props.setProperty("user", "kaine_user");
-    props.setProperty("password", "2fyHCYhg8r0S7rQEcBp44ZnxP5E6pvkJ");
-    props.setProperty("ssl", "true");
-    props.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory"); // This disables server hostname verification, use it only if necessary.
-
+       String url = "jdbc:postgresql://localhost/fc_charities";
+       Properties props = new Properties();
+  props.setProperty("user", "postgres");
+    props.setProperty("password", "123456");
+    
     DriverManager.registerDriver(new org.postgresql.Driver());
     Connection con = DriverManager.getConnection(url, props);
     DriverManager.registerDriver(new org.postgresql.Driver());
