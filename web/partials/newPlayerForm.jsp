@@ -23,11 +23,7 @@
         </div>
         <div>
             <label for="ben">Beneficiary Gender</label>
-            <br>
-            <select name="Gender" class="form-select">
-                <option value="Male">Male</option>         
-                <option value="Female">Female</option>
-            </select>
+            <input type="text" name="Gender" class="form-control" required />
         </div>
         <button class="btn btn-primary">Register player</button>
     </form>
