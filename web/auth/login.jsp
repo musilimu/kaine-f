@@ -12,7 +12,7 @@
 
 %>
 <script>
-    location.href = "${pageContext.request.contextPath}/dashboard.jsp";
+    location.href = "${pageContext.request.contextPath}/home.jsp";
 </script>
 <%
 } else {
