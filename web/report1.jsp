@@ -15,9 +15,15 @@
         <title>kaine fc</title>
     </head>
     <body>
+        <div style="float: right;">
+
+        <a class="success" href="#" onclick="window.print()" style=" color:white;background-color: green;padding: 8px;text-decoration: none;">Download PDF</a>
+    
+        <a  class="danger" style="color: white;background-color:  #ff3333;padding: 8px;text-decoration: none;" href="report.jsp">Back</a>
+</div>
         <div class="container">
         <table class="table">
-
+            
             <tr>
                 <th>id</th>
                 <th>First-name of Beneficiary</th>
@@ -26,6 +32,7 @@
                 <th>Type</th>
                 <th>Date</th>
             </tr>
+        
             <c:if test="${not empty param.report}">
                 <%
                     String from = request.getParameter("from");
